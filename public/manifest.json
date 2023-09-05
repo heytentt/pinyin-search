@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "PinyinSearch • 拼音搜索",
+  "description": "PinyinSearch 是一个支持拼音搜索的浏览器扩展",
+  "version": "1.1",
+  "omnibox": {
+    "keyword": "j"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "permissions": [
+    "storage",
+    "history",
+    "tabs",
+    "bookmarks"
+  ]
+}
