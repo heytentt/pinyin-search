@@ -11,7 +11,9 @@ Pinyin Search • 拼音搜索（[Chrome Web Store 地址](https://chrome.google
 - [x] 支持history、bookmark、tab搜索
 - [x] 监听添加、删除、更新事件
 - [x] 支持双拼
+- [ ] popup 搜索
 - [ ] try https://github.com/nextapps-de/flexsearch
+- [ ] 网页全文搜索
 
 # References
 
