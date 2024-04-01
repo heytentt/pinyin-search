@@ -1,0 +1,46 @@
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/gray.css';
+
+:root {
+    --theme-color: var(--green-10);
+    --theme-color-light: var(--green-5);
+}
+
+
+.mono-font {
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.input-box-shadow {
+    border-radius: 6px;
+    box-shadow: var(--theme-color-light) 0px 0px 0px 2.5px;
+}
+
+.search-input {
+    outline: none;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-family: monospace;
+    line-height: 26px;
+    width: 300px;
+    border-radius: 6px;
+    border: solid 1px var(--gray-6);
+}
+
+.search-input:focus {
+    border: solid 1px var(--theme-color);
+}
+
+.search-range-box {
+    outline: none;
+    height: 36px;
+    border-radius: 6px;
+    border: solid 1px var(--gray-6);
+    /* padding: 3px 5px; */
+}
+
+.search-range-box:focus {
+    border: solid 1px var(--theme-color);
+    box-shadow: var(--theme-color-light) 0px 0px 0px 2.5px;
+}

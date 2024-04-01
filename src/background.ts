@@ -3,6 +3,7 @@ import {
     DefaultResultsMaxNum, ItemType, ContentTabPrefix,
     log, mustString, format_content, format_description, set_current_tab_url,
     parseTabId, gotoTab, isValidUrl, SearchMode,
+    Message, MessageType,
 } from './common'
 import { Item, Search } from './fuse'
 
@@ -171,4 +172,15 @@ chrome.omnibox.onInputCancelled.addListener(() => {
 
 // ==== Helpers =========================================================================================
 
-
+chrome.runtime.onMessage.addListener((message: Message, sender: chrome.runtime.MessageSender, sendResponse: (response?: any) => void) => {
+    log('onMessage:', message, sender);
+    if (message.type == 'SEARCH') {
+        const query = message.data.query;
+        chrome.storage.sync.get(['limit', 'search_mode']).then((result) => {
+            const results = Search.search(query, result.limit, result.search_mode);
+            log('results:', results)
+            sendResponse({data: { results: results}})
+        })
+        return true;
+    }
+})

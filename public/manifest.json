@@ -12,13 +12,24 @@
     "48": "icon.png",
     "128": "icon.png"
   },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+L",
+        "mac": "MacCtrl+L"
+      }
+    }
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png"
+    },
+    "default_title": "popup",
+    "default_popup": "popup.html"
+  },
   "background": {
     "service_worker": "js/background.js"
   },
-  "permissions": [
-    "storage",
-    "history",
-    "tabs",
-    "bookmarks"
-  ]
+  "permissions": ["storage", "history", "tabs", "bookmarks"]
 }

@@ -1,6 +1,5 @@
 
 
-// ==== Constants =========================================================================================
 
 // 搜索结果最大数量
 export const DefaultResultsMaxNum = 8;
@@ -17,6 +16,14 @@ export enum ItemType {
     Bookmark = 2,
     Tab = 3,
 }
+
+export const ItemTypes = [ItemType.Bookmark, ItemType.History, ItemType.Tab];
+
+export const ItemType2TextMap = new Map<ItemType, string>([
+    [ItemType.History, 'History'],
+    [ItemType.Bookmark, 'Bookmark'],
+    [ItemType.Tab, 'Tab'],
+]);
 
 // 每种类型对应的 utf-8 符号
 export const Type2SymbolMap = new Map<ItemType, string>([
@@ -52,6 +59,21 @@ export interface PinyinPart {
 }
 
 export const ExcludedURLs = ['chrome://newtab/'];
+
+
+export declare type MessageType = 'SEARCH';
+
+export declare type Message<T = any> = {
+    type: MessageType;
+    data?: T;
+};
+
+export declare type ResponseType = 'SUCCESS' | 'FAILED' | 'PENDING' | 'UNAUTHORIZED' | 'AUTHENTICATED';
+
+export declare type Response<T = any> = {
+    type: ResponseType;
+    data?: T;
+};
 
 
 export function gotoTab(id: number) {
